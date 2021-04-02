@@ -1,22 +1,21 @@
 ---
 layout: default
-title: Alan
-path: home
+prism: true
 ---
 
-<div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{title}}
-    </strong>
-  </h1>
+<div class="container max-w-4xl mt-6  px-6">
+    <div class="pb-5 mb-5 border-b border-gray-100">
+        <h1 class="font-bold text-5xl">{{title}}</h1>
+        <p class="text-center text-base leading-6 font-medium text-gray-500">
+            <time> {{ date | readableDate }}
+                by
+                <a>{{ author }}</a>
 
-  <p>
-    <abbr title="netlify cms, eleventy, alpine js & tailwind css">NEAT</abbr>
-    Starter Template. Get Started by editing.
-    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code>
-  </p>
+            </time>
+        </p>
 
-  {% include "./_includes/partials/content.html" %}
+    </div>
+    <article class="prose lg:prose-xl my-4 mx-auto">
+        {{ content | safe }}</article>
+
 </div>
